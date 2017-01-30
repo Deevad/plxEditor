@@ -109,8 +109,13 @@ class plxEditor extends plxPlugin {
 	 **/
 	public function AdminFootEndBody() {
 		$langfile = $this->plugPath.'plxEditor/lang/'.$this->default_lang.'.js';
-		if(is_file($langfile))
-		echo '<script src="'.$langfile.'"></script>'."\n";
+		if(is_file($langfile)) {
+      echo '<script src="'.$langfile.'"></script>'."\n";
+    } else {
+      $langfile = $this->plugPath.'plxEditor/lang/en.js';
+      echo '<script src="'.$langfile.'"></script>'."\n";
+    }
+
 		echo '<?php $medias = $plxAdmin->aConf["medias"].($plxAdmin->aConf["userfolders"] ? $_SESSION["user"]."/" : ""); ?>';
 		echo '
 		<script>
