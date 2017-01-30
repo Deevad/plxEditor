@@ -1,10 +1,11 @@
 .tag {
-	color:#990099;
+	color:#729ECE;
+  font-weight: bold;
 	margin:0;
 	display:block;
 }
 .entities {
-	color:#00CCCC;
+	color:#987396;
   font-style: italic;
 }
 blockquote {
@@ -14,9 +15,11 @@ b {
 	font-weight:bold;
 }
 .literal {
-	color:#0000FF;
+	color:#EBD200;
+  font-weight:normal;
 }
 .comment {
 	color:#CCCCCC;
 	display:block;
 }
+

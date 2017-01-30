@@ -220,8 +220,8 @@ PLXEDITOR.editor=function() {
 		var html = "<!DOCTYPE html>";
 		html += '<html><head>';
 		html += '<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">';
-		html += '<style type="text/css">pre { background-color: #fff; padding: 0.75em 1.5em; border: 1px solid #dddddd;* }</style>';
-		html += '<style type="text/css">html,body { font-family: helvetica, arial, sans-serif; cursor: text; } body { margin: 0.5em; padding: 0; } img { border:none; max-width: 100%; } a { color: #258fd6; text-decoration:none; }</style>';
+		html += '<style type="text/css">pre,code { background-color: #f7f7f7; padding: 1em; line-height: 1.45; border-radius: 3px; font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace; }</style>';
+		html += '<style type="text/css">html,body { font-family: helvetica, arial, sans-serif; cursor: text; font-size: 93.7%; color:#111; line-height:1.4; } body { margin: 0.5em; padding: 0; } img { border:none; max-width: 100%; } a { color: #258fd6; text-decoration:none; } h1,h2,h3,h4,h5 {margin: 2rem 0 1rem;} h2 {font-size: 2.2rem;} h3 {font-size: 1.6rem;}</style>';
 		html += '</head><body></body></html>';
 		return html;
 	},
@@ -276,13 +276,17 @@ PLXEDITOR.editor=function() {
 			filecss.href = this.path.css+'viewsource.css';
 			this.frame.document.getElementsByTagName("head")[0].appendChild(filecss);
 			// set the font values for displaying HTML source
-			this.frame.document.body.style.fontSize = "13px";
-			this.frame.document.body.style.fontFamily = "Courier New";
+			this.frame.document.body.style.fontSize = "12px";
+			this.frame.document.body.style.fontFamily = "Liberation Mono";
+			this.frame.document.body.style.color = "#efefef";
+			this.frame.document.body.style.backgroundColor = "#2E3436";
 			this.viewSource = true;
 			E$(this.textareaId+'-footer').innerHTML = "";
 		} else {
 			E$(this.textareaId+'-toolbar-icons').setAttribute('class', 'show');
 			E$(this.textareaId+'-footer').setAttribute('class', 'plxeditor-footer show');
+			this.frame.document.body.style.backgroundColor = "#ffffff";
+			this.frame.document.body.style.color = "#111111";
 			if (this.IE) {
 				txt = this.frame.document.body.innerText;
 				// conversion des liens
