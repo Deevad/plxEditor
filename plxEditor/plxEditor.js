@@ -369,7 +369,7 @@ PLXEDITOR.editor=function() {
 PLXEDITOR_fallback = function(cible, txt, replace) {
 	var editor = 'window.opener.' + cible.replace('id_', 'editor_');
 	txt = '../../'+txt.replace(PLUXML_ROOT, '');
-	var res = txt.match(/\.tb\.(jpe?g|gif|png)$/gi);
+	var res = txt.match(/\.(jpe?g|gif|png)$/gi);
 	var ext = txt.substr(txt.lastIndexOf('.') + 1);
 	if(res) {
 		var f = txt.replace(res[0], '.'+ext);
