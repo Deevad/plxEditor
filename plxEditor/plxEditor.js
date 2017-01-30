@@ -373,7 +373,7 @@ PLXEDITOR_fallback = function(cible, txt, replace) {
 	var ext = txt.substr(txt.lastIndexOf('.') + 1);
 	if(res) {
 		var f = txt.replace(res[0], '.'+ext);
-		var s = '<a href="'+f+'" title=""><img src="'+txt+'" alt="" /></a>'+"\n";
+		var s = '<div align="center"><a href="'+f+'" title=""><img src="'+txt+'" alt="" /></a><br><font color="#999999"><em>click to enlarge</em></font></div><br>'+"\n";
 		eval(editor).execCommand('inserthtml', s);
 	} else {
 		eval(editor).execCommand('InsertImage', txt);
